@@ -9,6 +9,8 @@ body {
 
 .logo a {
     color: white;
+    font-size: 32px;
+    font-weight: 600;
 }
 
 .logo a:hover {
