@@ -9,6 +9,7 @@ body {
 }
 
 .logo a {
+    font-size: 18px;
     color: white;
     font-weight: 600;
 }
