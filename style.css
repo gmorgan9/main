@@ -31,3 +31,16 @@ i {
 .card {
     background-color: rgb(145, 134, 136);
 }
+img {
+    margin-left: 25px;
+}
+.img-box {
+    width: 200px;
+    height:250px;
+    border: 6px solid black;
+    top: -25px;
+    margin-right: -200px;
+}
+.big-name {
+    font-family: 'Monoton', cursive;
+}
