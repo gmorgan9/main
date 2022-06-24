@@ -7,13 +7,27 @@ body {
     background: rgb(43,9,9);
     background: linear-gradient(90deg, rgba(43,9,9,1) 0%, rgba(12,15,48,1) 100%);
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+i {
+    color: rgb(145, 134, 136);
+}
 
 .logo a {
     font-size: 18px;
-    color: white;
     font-weight: 600;
 }
 
 .logo a:hover {
     color: white;
+}
+
+.card {
+    background-color: rgb(145, 134, 136);
 }
