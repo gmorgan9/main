@@ -44,3 +44,11 @@ img {
 .big-name {
     font-family: 'Monoton', cursive;
 }
+.service-card {
+    background-color: rgb(255, 255, 255) !important;
+    border-radius: 25px !important;
+    box-shadow: 10px 5px 5px rgba(63, 63, 63, 0.381);
+}
+/* .service-card .card-title, .card-text, i {
+    color: white;
+} */
