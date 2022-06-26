@@ -413,7 +413,7 @@
 
     <!-- modals -->
     <!-- yt-vid1 -->
-    <div class="modal fade" id="yt-vid1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="yt-vid1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
@@ -428,10 +428,10 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <!-- end yt-vid1 -->
       <!-- src-code1 -->
-    <div class="modal fade" id="src-code1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="src-code1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
@@ -447,7 +447,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <!-- end yt-vid1 -->
       <!-- End Portfolio Section -->
 
@@ -658,7 +658,7 @@
 
       </div>
     </section><!-- End Contact Section -->
-    <button data-bs-toggle="modal" data-tagVideo="https://www.youtube.com/embed/zcX7OJ-L8XQ" data-bs-target="#videoModal">Video</button>
+    <button data-bs-toggle="modal" data-tagVideo="https://www.youtube-nocookie.com/embed/X30V5iWRev8" data-bs-target="#videoModal">Video</button>
 
     <div class="modal fade" id="videoModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -700,20 +700,6 @@
   <!-- <script src="/assets/vendor/php-email-form/validate.js"></script> -->
 
   <!-- Template Main JS File -->
-  <script>
-    function autoPlayYouTubeModal() {
-  var triggerOpen = $("body").find('[data-tagVideo]');
-  triggerOpen.click(function() {
-    var theModal = $(this).data("bs-target"),
-      videoSRC = $(this).attr("data-tagVideo"),
-      videoSRCauto = videoSRC + "?autoplay=1";
-    $(theModal + ' iframe').attr('src', videoSRCauto);
-    $(theModal + ' button.btn-close').click(function() {
-      $(theModal + ' iframe').attr('src', videoSRC);
-    });
-  });
-}
-</script>
 <script>
   $(document).ready(function() {
     autoPlayYouTubeModal();
