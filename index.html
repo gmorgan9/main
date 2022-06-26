@@ -684,11 +684,18 @@
 
   <!-- Template Main JS File -->
   <script>
-    $('.modal').on('hidden.bs.modal', function () {
-    $('video').each(function() {
-      this.player.pause();
-    });
-})
+    $(document).ready(function() {
+  var $videoSrc;  
+  $('.video-btn').click(function() {
+      $videoSrc = $(this).data( "src" );
+  });
+  $('#MakeModal').on('shown.bs.modal', function (e) {
+    $("#video").attr('src',$videoSrc + "?autoplay=1&modestbranding=1&showinfo=0" ); 
+  })
+  $('#MakeModal').on('hide.bs.modal', function (e) {
+        $("#video").attr('src',$videoSrc); 
+  }) 
+});
   </script>
   <script src="/assets/js/main.js"></script>
 
