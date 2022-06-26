@@ -642,17 +642,28 @@
                 <label for="name">Message</label>
                 <textarea class="form-control" name="message" rows="10" required></textarea>
               </div>
+              <div class="form-group">
+                <input type="hidden" name="_next" value="https://morgancloud.us/thankyou.html">
+              </div>
+              <div class="form-group">
+                <input type="hidden" name="_subject" value="New submission from morgancloud.us!">
+              </div>
+              <div class="form-group">
+                <input type="hidden" name="_captcha" value="false">
+              </div>
+              <div class="form-group">
+                <input type="hidden" name="_autoresponse" value="Thank you for submitting! We will get back to you as soon as possible!">
+              </div>
+              <div class="form-group">
+                <input type="text" name="_honey" style="display:none">
+              </div>
               <div class="my-3">
                 <div class="loading">Loading</div>
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
-                <input type="hidden" name="_next" value="https://morgancloud.us/thankyou.html">
-                <input type="hidden" name="_subject" value="New submission from morgancloud.us!">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_autoresponse" value="Thank you for submitting! We will get back to you as soon as possible!">
-                <input type="text" name="_honey" style="display:none">
+                
               </div>
-              <div class="text-center"><button type="submit" name="submit">Send Message</button></div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
           </div>
 
