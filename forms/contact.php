@@ -30,7 +30,7 @@
     if ($email1 && $email2) {
       $success = "Message was sent successfully!";
     } else {
-      $failed = "Sorry! Message was not sent, please try again!"
+      $failed = "Sorry! Message was not sent, please try again!";
     }
 
 
