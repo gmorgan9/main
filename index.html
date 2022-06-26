@@ -623,7 +623,7 @@
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="https://formsubmit.co/info@morgancloud.us" target="_blank" method="POST" enctype="text/plain" role="form" class="php-email-form">
+            <form action="https://formsubmit.co/info@morgancloud.us" target="_blank" method="POST" role="form" class="php-email-form">
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="name">Your Name</label>
@@ -642,7 +642,9 @@
                 <label for="name">Message</label>
                 <textarea class="form-control" name="message" rows="10" required></textarea>
               </div>
-                <input type="hidden" name="_captcha" value="false">
+              <div class="form-group">
+              <input type="hidden" name="_autoresponse" value="your custom message">
+                </div>
               <div class="my-3">
                 <div class="loading">Loading</div>
                 <div class="error-message"></div>
