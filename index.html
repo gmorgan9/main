@@ -684,9 +684,9 @@
 
   <!-- Template Main JS File -->
   <script>
-    $('#myModal').on('hidden.bs.modal', function () {
-    $('#myModal iframe').removeAttr('src');
-})
+    $("#myModal").on('hidden.bs.modal', function (e) {
+        $("#myModal iframe").attr("src", $("#myModal iframe").attr("src"));
+    });
   </script>
   <script src="/assets/js/main.js"></script>
 
