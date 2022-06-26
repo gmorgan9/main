@@ -331,7 +331,7 @@
             <div class="portfolio-wrap">
               <img src="/assets/img/portfolio/navbar-project(1.1).png" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a style="cursor: pointer;" class="video-btn" data-bs-toggle="modal" data-bs-target="#src-code1" title="More Details"><i class="bx bx-link"></i></a>
+                <a style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#src-code1" title="More Details"><i class="bx bx-link"></i></a>
               </div>
             </div>
           </div>
@@ -421,7 +421,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <iframe width="765" height="425" src="https://www.youtube-nocookie.com/embed/X30V5iWRev8" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="765" height="425" src="https://www.youtube-nocookie.com/embed/X30V5iWRev8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -684,37 +684,12 @@
 
   <!-- Template Main JS File -->
   <script>
-    $(document).ready(function(){
-  $('#modalOpen').on('click', function(){
-    $('.modal__containter').addClass('modal__open');
-    
-    setTimeout(function(){
-      $('.modal').removeClass('hide');
-      $('.modal').addClass('transition');
-    });
-    setTimeout(function(){
-      $('.modal').removeClass('transition');
-      $('.modal').addClass('visible');
-      },50);
-  });
-  
-  $('.modal__close').on('click', function(){
-    var video = $("#playerid").attr("src");
-    $("#playerid").attr("src","");
-    $("#playerid").attr("src",video);
-    
-    $('.modal__containter').removeClass('modal__open');
-    $('.modal').removeClass('visible');
-    $('.modal').addClass('transition');
-    setTimeout(function(){
-      $('.modal').removeClass('transition');
-      $('.modal').addClass('hide');
-    },500);
-  });
-  
-  
-  
+    var exampleModal = document.getElementById('exampleModal')
+    exampleModal.addEventListener('show.bs.modal', function (event) {
+      $('body').on('hidden.bs.modal', '.modal', function () {
+$('video').trigger('pause');
 });
+    })
   </script>
   <script src="/assets/js/main.js"></script>
 
