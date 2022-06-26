@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Example of Embedding YouTube Video inside Bootstrap Modal</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<style type="text/css">
+    .bs-example{
+        margin: 20px;
+    }
+    .modal-content iframe{
+        margin: 0 auto;
+        display: block;
+    }
+</style>
+<script type="text/javascript">
+       $('#yourModalID').on('hide.bs.modal', function(e) {    
+   var $if = $(e.delegateTarget).find('iframe');
+   var src = $if.attr("src");
+   $if.attr("src", '/empty.html');
+   $if.attr("src", src);
+});
+    </script>
+</head>
+<body>
+
+
+    <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+    
+            <div class="modal-body" id="yt-player">
+               <iframe width="560" height="315" src="https://www.youtube.com/embed/rrT6v5sOwJg" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-sm-12 text-center">
+    <h3>How to stop YouTube video on modal close</h3></div>
+  <div class="col-sm-4 col-sm-offset-4 text-center">
+    <button class="btn btn-lg btn-primary "  role="button" data-bs-toggle="modal" data-bs-target="#myModal"><i class="fa fa-play"></i> View Video</button></div></div></div></div>
+</body>
+</html> 
