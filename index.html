@@ -684,12 +684,9 @@
 
   <!-- Template Main JS File -->
   <script>
-    $('#myModal').on('hidden.bs.modal', function(e) {
-  var $iframes = $(e.target).find('iframe');
-  $iframes.each(function(index, iframe){
-  $(iframe).attr('src', $(iframe).attr('src'));
-  });
-})
+    $('#myModal').on('hidden.bs.modal', function() {
+  $('iframe').contents().find('video')[0].pause();
+});
   </script>
   <script src="/assets/js/main.js"></script>
 
