@@ -684,17 +684,21 @@
 
   <!-- Template Main JS File -->
   <script>
-    $(document).ready(function() {
-  var $videoSrc;  
-  $('.video-btn').click(function() {
-      $videoSrc = $(this).data( "src" );
+    //FUNCTION TO GET AND AUTO PLAY YOUTUBE VIDEO FROM DATATAG
+function autoPlayYouTubeModal(){
+  var trigger = $("body").find('[data-toggle="modal"]');
+  trigger.click(function() {
+    var theModal = $(this).data( "target" ),
+    videoSRC = $(this).attr( "data-theVideo" ), 
+    videoSRCauto = videoSRC+"?autoplay=1" ;
+    $(theModal+' iframe').attr('src', videoSRCauto);
+    $(theModal+' button.close').click(function () {
+        $(theModal+' iframe').attr('src', videoSRC);
+    });   
   });
-  $('#MakeModal').on('shown.bs.modal', function (e) {
-    $("#video").attr('src',$videoSrc + "?autoplay=1&modestbranding=1&showinfo=0" ); 
-  })
-  $('#MakeModal').on('hide.bs.modal', function (e) {
-        $("#video").attr('src',$videoSrc); 
-  }) 
+}
+$(document).ready(function(){
+  autoPlayYouTubeModal();
 });
   </script>
   <script src="/assets/js/main.js"></script>
