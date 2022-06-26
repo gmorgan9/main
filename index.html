@@ -684,9 +684,9 @@
 
   <!-- Template Main JS File -->
   <script>
-    var exampleModal = document.getElementById('exampleModal')
-    exampleModal.addEventListener('show.bs.modal', function (event) {
-    })
+    $("#myModal").on('hidden.bs.modal', function (e) {
+    $("#myModal iframe").attr("src", $("#myModal iframe").attr("src"));
+});
   </script>
   <script src="/assets/js/main.js"></script>
 
