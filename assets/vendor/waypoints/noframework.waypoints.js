@@ -139,7 +139,7 @@ https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
   Waypoint.viewportHeight = function() {
     return window.innerHeight || document.documentElement.clientHeight
   }
-
+ 
   /* Public */
   /* http://imakewebthings.com/waypoints/api/viewport-width */
   Waypoint.viewportWidth = function() {
