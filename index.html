@@ -684,12 +684,11 @@
 
   <!-- Template Main JS File -->
   <script>
-    var exampleModal = document.getElementById('exampleModal')
-    exampleModal.addEventListener('show.bs.modal', function (event) {
-      $('body').on('hidden.bs.modal', '.modal', function () {
-$('video').trigger('pause');
-});
-    })
+    $('.modal').on('hidden.bs.modal', function () {
+    $('video').each(function() {
+      this.player.pause();
+    });
+})
   </script>
   <script src="/assets/js/main.js"></script>
 
