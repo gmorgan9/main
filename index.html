@@ -318,7 +318,7 @@
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
 
-          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-yt">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-yt">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/project-series(1.1).png" class="img-fluid" alt="">
               <div class="portfolio-links">
@@ -334,15 +334,6 @@
                 <a style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#src-code1" title="More Details"><i class="bx bx-link"></i></a>
               </div>
             </div>
-          </div> -->
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-source">
-            <div class="portfolio-wrap">
-              <img src="/assets/img/portfolio/navbar-project(1.1).png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-          <a href="#" data-toggle="modal" data-target="#videoModal" data-theVideo="http://www.youtube.com/embed/loFtozxZG0s" >VIDEO</a>
-          </div>
-        </div>
           </div>
 
           <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
@@ -421,22 +412,8 @@
     </section>
 
     <!-- modals -->
-    <!-- test -->
-    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-body">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <div>
-              <iframe width="100%" height="350" src=""></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- end test -->
     <!-- yt-vid1 -->
-    <!-- <div class="modal fade" id="yt-vid1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="yt-vid1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
@@ -451,10 +428,10 @@
             </div>
           </div>
         </div>
-      </div> -->
+      </div>
       <!-- end yt-vid1 -->
       <!-- src-code1 -->
-    <!-- <div class="modal fade" id="src-code1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="src-code1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
@@ -470,7 +447,7 @@
             </div>
           </div>
         </div>
-      </div> -->
+      </div>
       <!-- end yt-vid1 -->
       <!-- End Portfolio Section -->
 
@@ -707,22 +684,9 @@
 
   <!-- Template Main JS File -->
   <script>
-    //FUNCTION TO GET AND AUTO PLAY YOUTUBE VIDEO FROM DATATAG
-function autoPlayYouTubeModal(){
-  var trigger = $("body").find('[data-toggle="modal"]');
-  trigger.click(function() {
-    var theModal = $(this).data( "target" ),
-    videoSRC = $(this).attr( "data-theVideo" ), 
-    videoSRCauto = videoSRC+"?autoplay=1" ;
-    $(theModal+' iframe').attr('src', videoSRCauto);
-    $(theModal+' button.close').click(function () {
-        $(theModal+' iframe').attr('src', videoSRC);
-    });   
-  });
-}
-$(document).ready(function(){
-  autoPlayYouTubeModal();
-});
+    $('#myModal').on('hidden.bs.modal', function () {
+    $('#myModal iframe').removeAttr('src');
+})
   </script>
   <script src="/assets/js/main.js"></script>
 
