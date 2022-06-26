@@ -684,39 +684,36 @@
 
   <!-- Template Main JS File -->
   <script>
-    $(document).ready(function() {
-
-// Gets the video src from the data-src on each button
-
-var $videoSrc;  
-$('.video-btn').click(function() {
-    $videoSrc = $(this).data( "src" );
-});
-console.log($videoSrc);
-
-  
-  
-// when the modal is opened autoplay it  
-$('#myModal').on('shown.bs.modal', function (e) {
+    $(document).ready(function(){
+  $('#modalOpen').on('click', function(){
+    $('.modal__containter').addClass('modal__open');
     
-// set the video src to autoplay and not to show related video. Youtube related video is like a box of chocolates... you never know what you're gonna get
-$("#video").attr('src',$videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0" ); 
-})
+    setTimeout(function(){
+      $('.modal').removeClass('hide');
+      $('.modal').addClass('transition');
+    });
+    setTimeout(function(){
+      $('.modal').removeClass('transition');
+      $('.modal').addClass('visible');
+      },50);
+  });
   
-
-
-// stop playing the youtube video when I close the modal
-$('#myModal').on('hide.bs.modal', function (e) {
-    // a poor man's stop video
-    $("#video").attr('src',$videoSrc); 
-}) 
+  $('.modal__close').on('click', function(){
+    var video = $("#playerid").attr("src");
+    $("#playerid").attr("src","");
+    $("#playerid").attr("src",video);
     
-    
-
-
+    $('.modal__containter').removeClass('modal__open');
+    $('.modal').removeClass('visible');
+    $('.modal').addClass('transition');
+    setTimeout(function(){
+      $('.modal').removeClass('transition');
+      $('.modal').addClass('hide');
+    },500);
+  });
   
   
-// document ready  
+  
 });
   </script>
   <script src="/assets/js/main.js"></script>
