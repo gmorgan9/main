@@ -1,39 +1,37 @@
 <?php
-  /**
-  * Requires the "PHP Email Form" library
-  * The "PHP Email Form" library is available only in the pro version of the template
-  * The library should be uploaded to: vendor/php-email-form/php-email-form.php
-  * For more info and help: https://bootstrapmade.com/php-email-form/
-  */
+  if(isset($_POST['submit'])) {
+    $mailto = "info@morgancloud.us"; //my email address
 
-  // Replace contact@example.com with your real receiving email address
-  $receiving_email_address = 'garrett@morgancloud.us';
+    // getting contact form data
+    $name = $_POST['name']; // client name
+    $fromEmail = $_POST['email']; // client email
+    $subject = $_POST['subject']; // client subject
+    $confirmation = "Confirmation: Message was submitted successfully!"; // confirmation for client
 
-  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
-    include( $php_email_form );
-  } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
+    // Email Body
+    $message = "Client Name: " . $name ."\n"
+    . "Subject: " . $subject ."\n"
+    . "Message: " . "\n" . $_POST['message'];
+
+    $message2 = "Dear " . $name . "," . "\n"
+    . "Thank you for contacting me. I will get back to you shortly!" "\n\n"
+    . "You submitted the following message: " . "\n" . $_POST['message'] . "\n\n"
+    . "Regards," . "\n" . "- Garrett Morgan";
+
+    // Email Headers
+    $headers = "From: " .  $fromEmail; // client email
+    $headers2 = "From: " . $mailto;
+
+    // PHP mailer function
+    $email1 = mail($mailto, $subject, $message, $headers); // email sent to me
+    $email2 = mail($fromEmail, $confirmation, $message2, $headers2); // confirmation email
+
+    // emails successful 
+    if ($email1 && $email2) {
+      $success = "Message was sent successfully!";
+    } else {
+      $failed = "Sorry! Message was not sent, please try again!"
+    }
+
+
   }
-
-  $contact = new PHP_Email_Form;
-  $contact->ajax = true;
-  
-  $contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = $_POST['subject'];
-
-  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  $contact->smtp = array(
-    'host' => 'smtp.gmail.com',
-    'username' => 'info@morgancloud.us',
-    'password' => 'grmaqqmmkrhapiqo',
-    'port' => '587'
-  );
-
-  $contact->add_message( $_POST['name'], 'From');
-  $contact->add_message( $_POST['email'], 'Email');
-  $contact->add_message( $_POST['message'], 'Message', 10);
-
-  echo $contact->send();
-?>
